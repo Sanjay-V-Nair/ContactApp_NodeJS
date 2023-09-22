@@ -11,9 +11,7 @@ const port = process.env.PORT || 5000;
 //     res.send("Get all contacts")
 // })
 
-app.get('/api/contacts', (req, res) => {
-    res.status(200).json({ message: "Get all contacts" })
-})
+app.use('/api/contacts', require("./routes/contactRoutes.js"))
 
 
 app.listen(port, () => {
